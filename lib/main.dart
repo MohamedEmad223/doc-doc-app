@@ -4,10 +4,5 @@ import 'package:flutter/material.dart';
 import 'core/routes/app_routes.dart';
 
 void main() {
-  runApp( DocApp(appRouter: AppRoutes(
-
-  )) );
+  runApp(DocApp(appRouter: AppRoutes()));
 }
-
-
-
