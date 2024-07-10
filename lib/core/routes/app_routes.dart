@@ -5,21 +5,23 @@ import '../../feature/auth/view/screens/setup.dart';
 import '../../feature/home_screen.dart';
 import '../../feature/on_boarding/view/screens/on_boarding.dart';
 
-class AppRoutes{
-  Route<dynamic>? onGenerateRoute(RouteSettings settings){
-    switch(settings.name){
+class AppRoutes {
+  Route onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
       case Routes.onBoardingScreen:
-        return MaterialPageRoute(builder: (context) => const OnboardingScreen());
+        return MaterialPageRoute(
+            builder: (context) => const OnboardingScreen());
       case Routes.homeScreen:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
       case Routes.loginScreen:
         return MaterialPageRoute(builder: (context) => const LoginScreen());
       default:
-        return MaterialPageRoute(builder: (context) => Scaffold(
-          body: Center(
-            child: Text('No route defined for ${settings.name}'),
-          ),
-        ));
+        return MaterialPageRoute(
+            builder: (context) => Scaffold(
+                  body: Center(
+                    child: Text('No route defined for ${settings.name}'),
+                  ),
+                ));
     }
   }
 }
