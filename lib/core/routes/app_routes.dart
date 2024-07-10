@@ -1,7 +1,7 @@
 import 'package:doc_doc/core/routes/routs.dart';
 import 'package:flutter/material.dart';
 
-import '../../feature/auth/view/screens/setup.dart';
+import '../../feature/auth/view/screens/login_screen.dart';
 import '../../feature/home_screen.dart';
 import '../../feature/on_boarding/view/screens/on_boarding.dart';
 
