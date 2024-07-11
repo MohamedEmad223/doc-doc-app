@@ -1,5 +1,5 @@
 import 'package:doc_doc/core/helpers/extensions.dart';
-import 'package:doc_doc/core/theming/app_color.dart';
+import 'package:doc_doc/core/theming/colors_manager.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/routes/routs.dart';
@@ -15,7 +15,7 @@ class GetStartedButton extends StatelessWidget {
         context.pushNamed(Routes.loginScreen);
       },
       style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all(AppColor.mainBlue),
+        backgroundColor: WidgetStateProperty.all(ColorsManager.mainBlue),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         minimumSize: WidgetStateProperty.all(
           const Size(double.infinity, 52),
@@ -28,7 +28,7 @@ class GetStartedButton extends StatelessWidget {
       ),
       child: Text(
         'Get Started',
-        style: Styles.font16WhiteSemiBold,
+        style: TextStyles.font16WhiteSemiBold,
       ),
     );
   }

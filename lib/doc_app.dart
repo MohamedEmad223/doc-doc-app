@@ -1,5 +1,5 @@
 import 'package:doc_doc/core/routes/app_routes.dart';
-import 'package:doc_doc/core/theming/app_color.dart';
+import 'package:doc_doc/core/theming/colors_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,7 +10,6 @@ class DocApp extends StatelessWidget {
 
   final AppRoutes appRouter;
 
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -19,13 +18,12 @@ class DocApp extends StatelessWidget {
         child: MaterialApp(
           theme: ThemeData(
             scaffoldBackgroundColor: Colors.white,
-            primaryColor: AppColor.mainBlue,
+            primaryColor: ColorsManager.mainBlue,
           ),
           title: 'Doc App',
           debugShowCheckedModeBanner: false,
           initialRoute: Routes.onBoardingScreen,
           onGenerateRoute: appRouter.onGenerateRoute,
-        )
-    );
+        ));
   }
 }

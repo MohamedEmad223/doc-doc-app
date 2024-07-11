@@ -1,10 +1,9 @@
 import 'package:doc_doc/core/theming/styles.dart';
+import 'package:doc_doc/feature/on_boarding/view/widgets/doctot_logo_with_opacity_and_text.dart';
+import 'package:doc_doc/feature/on_boarding/view/widgets/get_started_button.dart';
+import 'package:doc_doc/feature/on_boarding/view/widgets/logo_and_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../widgets/doctot_logo_with_opacity_and_text.dart';
-import '../widgets/get_started_button.dart';
-import '../widgets/logo_and_name.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -12,34 +11,33 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30.w,vertical: 30.h),
-        child: Center(
+      body: SafeArea(
+          child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(top: 30.h, bottom: 30.h),
           child: Column(
             children: [
+              const DocLogoAndName(),
               SizedBox(height: 30.h),
-              const LogoAndName(),
-              SizedBox(height: 30.h),
-              const DoctorLogoWithOpacityAndText(),
+              const DoctorImageAndText(),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.h),
+                padding: EdgeInsets.symmetric(horizontal: 30.w),
                 child: Column(
                   children: [
                     Text(
                       'Manage and schedule all of your medical appointments easily with Docdoc to get a new experience.',
+                      style: TextStyles.font13GrayRegular,
                       textAlign: TextAlign.center,
-                      style: Styles.font13GrayRegular,
                     ),
+                    SizedBox(height: 30.h),
+                    const GetStartedButton(),
                   ],
                 ),
-              ),
-              SizedBox(height: 30.h),
-              const GetStartedButton()
+              )
             ],
           ),
         ),
-      ),
-    ));
+      )),
+    );
   }
 }
